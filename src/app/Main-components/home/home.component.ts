@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
         //getting the stringified list of objects
         this.stringContainer = this._ProdService.products.getValue();
         this.products = JSON.parse(this.stringContainer);
-        this.productsNumber = this.products.length;
+        
         this.productClassification(this.products);
 
       }
@@ -43,19 +43,23 @@ export class HomeComponent implements OnInit {
   //and assigning the length of each list to the vaiable carrying the number which will ppear in the side bar
   productClassification(prods:any[])
   {
-    prods.forEach((a)=>{
-      if(a.category == 'simple')
-      {
-        this.simpleProducts.push(a);
-      }
-      else
-      {
-        this.complexProducts.push(a);
-      }
-      
-    })
-    this.complexProductsNumber = this.complexProducts.length;
-    this.simpleProductsNumber = this.simpleProducts.length;
+    if(prods != null)
+    {
+      prods.forEach((a)=>{
+        if(a.category == 'simple')
+        {
+          this.simpleProducts.push(a);
+        }
+        else
+        {
+          this.complexProducts.push(a);
+        }
+        
+      })
+      this.productsNumber = this.products.length;
+      this.complexProductsNumber = this.complexProducts.length;
+      this.simpleProductsNumber = this.simpleProducts.length;
+    }
   }
  //this method is responsible for viewing the simple products only when the user choose it
   filterSimpleProducts()
