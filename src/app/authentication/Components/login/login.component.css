@@ -1,0 +1,18 @@
+form{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+.loginForm{
+    margin-top: 10%;
+}
+@media screen and (max-width:750px) {
+    form
+    {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30%;
+    }
+}

@@ -1,0 +1,18 @@
+<form (ngSubmit)="logingin(loginForm)"  [formGroup]="loginForm" class="loginForm" >
+    <div *ngIf="loginginError" class="alert alert-danger text-center">
+        <h5>{{loginginError}}</h5>
+    </div>
+    <label for="email">email</label>
+    <input placeholder="admin1216@gmail.com" class="mb-3 form-control" formControlName="email" id="email" type="email">
+    <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="alert alert-danger">
+        <p *ngIf="loginForm.get('email')?.errors?.['required']" class="m-0 p-0">email is required</p>
+        <p *ngIf="loginForm.get('email')?.errors?.['min']" class="m-0 p-0">email is inValid</p>
+    </div>
+    <label for="password">password</label>
+    <input placeholder="Abcd" class="mb-3 form-control" formControlName="password" id="password" type="password">
+    <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class="alert alert-danger">
+        <p *ngIf="loginForm.get('password')?.errors?.['required']" class="m-0 p-0">password is required</p>
+        <p *ngIf="loginForm.get('password')?.errors?.['pattern']" class="m-0 p-0">password is inValid,first number must eb capital</p>
+    </div>
+    <button [disabled]="loginForm.invalid" class="btn btn-info">LogIn</button>
+</form>

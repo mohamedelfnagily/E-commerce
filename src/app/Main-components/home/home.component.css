@@ -1,0 +1,36 @@
+.childOne{
+    width: 20%;
+}
+.childOne ul{
+    margin-top: 35%;
+    
+}
+.childOne li{
+    list-style: none;
+    
+}
+@media screen and (max-width:750px) {
+    .childOne{
+        display: none;
+    }
+    .childTwo{
+        width: 100% !important;
+    }
+    
+}
+.childTwo{
+    width: 80%;
+    height: 90% !important;
+    margin-top: 50px;
+    margin-left: auto;
+    
+}
+.childTwo .col-md-3 img{
+    transition: 1s;
+}
+.childTwo .col-md-3 {
+    cursor: pointer;
+}
+.childTwo .col-md-3:hover img{
+    transform: scale(1.1);
+}

@@ -1,0 +1,21 @@
+<div class="container ">
+    <div class="row mt-3 position-relative">
+        <div class="col-md-8 mt-5">
+            <img  [src]="product.imageUrl | image" alt="product.name">
+        </div>
+        <div class="col-md-4 mt-5 d-flex align-items-center">   
+            <div>
+                <h3 class="fw-bold mt-3">{{product.name |emptyParam :'Tool Out Of Stock'}}</h3>
+                <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, eligendi vero! Dolor, maiores. Itaque aspernatur ab nisi similique a enim? Harum laborum expedita minima alias tempore quos. Similique, quasi nesciunt.</p>
+                <h5 class="alert alert-info text-center"  >{{product.price | emptyParam : '000' | currency:'USD':true }}</h5>
+                <div class="d-flex justify-content-between mt-4">
+                    <button routerLink="/home" class="btn btn-danger">Back to Home</button>
+                    <button routerLink="/home" class="btn btn-warning">Add to Cart</button>
+
+                </div>
+            </div>
+
+        </div>
+ 
+    </div>
+</div>

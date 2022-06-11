@@ -1,0 +1,48 @@
+<div class="container mt-5 h-100 ">
+    <div class="row mt-5 ">
+        <div class="col-md-3 mt-5 d-flex align-items-center">
+            <div>
+                <img  class="w-50 rounded-circle border border-3" src="../../../assets/images/pp.jpg" alt="">
+                <div class="d-flex mt-4">
+                    <button class="btn btn-warning me-3">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div  class="col-md-9 mt-5 p-4 shadow bg-white">
+            <div class=" d-flex align-items-center">
+                <table class="table ">
+                    <tbody>
+                        <tr>
+                            <td><h6 class="fw-bold">First Name:</h6></td>
+                            <td><h6>{{userData.first_name}}</h6></td>
+                            <td class="text-center"><button class="btn btn-info ">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td><h6 class="fw-bold">Last Name:</h6></td>
+                            <td><h6>{{userData.last_name}}</h6></td>
+                            <td class="text-center"><button class="btn btn-info ">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td><h6 class="fw-bold">Age:</h6></td>
+                            <td><h6>{{userData.age}}</h6></td>
+                            <td class="text-center"><button class="btn btn-info ">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td><h6 class="fw-bold">PassWord:</h6></td>
+                            <td><h6>######</h6></td>
+                            <td class="text-center"><button class="btn btn-info ">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td><h6 class="fw-bold">Email:</h6></td>
+                            <td><h6>{{userData.email}}</h6></td>
+                            <td class="text-center"><button class="btn btn-info ">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            <button routerLink="/home" class="btn btn-success float-end mt-5">Back To Home</button>
+        </div>
+    </div>
+</div>

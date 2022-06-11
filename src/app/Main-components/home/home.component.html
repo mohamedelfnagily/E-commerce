@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="d-flex">
+        <div class="childOne bg-white position-fixed start-0 top-0 bottom-0 shadow">
+            <ul class="ms-1 ">
+                <li class="mb-4"><h5 class="text-black ">Products</h5></li>
+                <li (click)="filterAllProducts()"   style="cursor: pointer;" class="mb-4"><h6 class="text-black ">All({{productsNumber}})</h6></li>
+                <li (click)="filterSimpleProducts()" style="cursor: pointer;" class="mb-4"><h6 class="text-black ">Simple Tools ({{simpleProductsNumber}})</h6></li>
+                <li (click)="filterComplexProducts()" style="cursor: pointer;" class="mb-4"><h6 class="text-black ">Complex Tools ({{complexProductsNumber}})</h6></li>
+                
+            </ul>
+
+        </div>
+        <div class="childTwo">
+            <div class="row">
+               <div class="mt-4 d-flex justify-content-between">
+                <h4>Products</h4>
+                <button class="btn btn-warning px-5">Sync</button>
+               </div>
+                <div *ngFor="let product of products" [routerLink]="['/product' ,product.id]"  class="col-md-3 p-4">
+                    <div class="border border-2 position-relative bg-white p-3">
+                        <div class="bg-white mb-4">
+                            <img class="w-100" [src]="product.imageUrl | image" [alt]="product.name">
+                        </div>
+                        <div style="background-color: #ccc;" class=" position-absolute bottom-0 end-0 start-0">
+                            <h6 class="text-center my-1 fw-bold">{{product.name}}</h6>
+                        <p class="text-center my-1">{{product.price | currency:'USD':true}}</p>
+                        </div>
+                        <div class=" position-absolute top-0 end-0 mt-1 me-1">
+                            <button class="btn btn-primary">Sync</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
