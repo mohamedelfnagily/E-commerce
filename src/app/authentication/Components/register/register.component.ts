@@ -11,10 +11,11 @@ import { AuthService } from 'src/app/Services/auth.service';
 export class RegisterComponent implements OnInit {
 
   constructor(private _AuthService:AuthService , private _Router:Router) { }
+  //this variable will carry the registeration error and show it to the user
   registerationError:string = '';
   ngOnInit(): void {
   }
-
+  //here is the registeration form consists of first name , last name , age , password and email
   registerForm:FormGroup = new FormGroup({
     first_name: new FormControl(null , [Validators.required ,  Validators.minLength(5) , Validators.maxLength(15)]),
     last_name: new FormControl(null , [Validators.required ,Validators.minLength(5) , Validators.maxLength(15)]),
@@ -22,7 +23,8 @@ export class RegisterComponent implements OnInit {
     email: new FormControl(null , [Validators.required , Validators.email]),
     password: new FormControl(null , [Validators.required , Validators.pattern(/^[A-Z][a-z]{2,8}$/)]),
   });
-
+  
+  //this function is responsible for sending the registeration data and getting the response back
   registeration(registerform:FormGroup)
   {
     this._AuthService.register(registerform.value).subscribe(
@@ -33,7 +35,6 @@ export class RegisterComponent implements OnInit {
         }
         else
         {
-          console.log(response)
           this.registerationError = response.errors.email.message;
         }
       },
